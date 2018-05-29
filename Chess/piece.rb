@@ -1,15 +1,15 @@
 class Piece
-  def initialize
-    @color
-    @board
-    @position = []
+  def initialize(board,color, position = [])
+    @color = color
+    @board = board
+    @position = position
   end
   
   def to_s
    " p "
   end
   
-  def move
+  def moves
     
   end
   
