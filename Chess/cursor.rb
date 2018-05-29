@@ -91,13 +91,11 @@ class Cursor
   end
 
   def update_pos(diff)
-      debugger
       potential_pos = [@cursor_pos[0] + diff[0], @cursor_pos[1] + diff[1]]    
     
       if board.valid_pos?(potential_pos) 
         @cursor_pos = potential_pos
       end
-      debugger
   
   end
 end

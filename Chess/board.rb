@@ -6,7 +6,7 @@ class Board
   class NoPieceError < StandardError; end
   class OccupiedError < StandardError; end
   class NotOnBoardError < StandardError; end
-  
+  attr_reader :grid
   def initialize
     @grid = Array.new(8) {Array.new(8)}
     @new_piece = Piece.new
@@ -84,10 +84,7 @@ class Board
   end 
   
   def valid_pos?(pos)
-    if pos[0].between?(0,7) && pos[1].between?(0,7) && self[pos] != nil 
-      return true
-    end
-      false
-    end
+    pos[0].between?(0,7) && pos[1].between?(0,7) && self[pos] != nil 
+  end    
   
 end
