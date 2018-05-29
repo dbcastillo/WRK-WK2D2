@@ -83,4 +83,11 @@ class Board
     
   end 
   
+  def valid_pos?(pos)
+    if pos[0].between?(0,7) && pos[1].between?(0,7) && self[pos] != nil 
+      return true
+    end
+      false
+    end
+  
 end
