@@ -5,6 +5,7 @@ class Board
   
   class NoPieceError < StandardError; end
   class OccupiedError < StandardError; end
+  class NotOnBoardError < StandardError; end
   
   def initialize
     @grid = Array.new(8) {Array.new(8)}
@@ -66,11 +67,15 @@ class Board
         raise NoPieceError
       elsif self[end_pos].is_a?(Piece)
         raise OccupiedError
+      elsif self[start_pos].nil? || self[end_pos].nil?
+        raise NotOnBoardError
       end 
     rescue NoPieceError
-      puts "There is no piece at this position"
+      puts "There is no piece at this position."
     rescue OccupiedError
-      puts "That position is occupied"
+      puts "That position is occupied."
+    rescue NotOnBoardError
+      puts "that position is not on the board."
     end
     
     self[end_pos] = self[start_pos]
