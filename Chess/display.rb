@@ -17,14 +17,20 @@ class Display
       @board.grid.each_index do |i|
         @board.grid.each_index do |j|
           if [i, j] == pos
-            puts @board.grid[i][j].to_s.colorize(:blue)
+            print @board.grid[i][j].to_s.colorize(:color => :light_blue, :background => :red)
           else
-            puts @board.grid[i][j]
+            print @board.grid[i][j]
           end
         end
+        print "\n"
       end
     end
   
   end
   
 end 
+
+
+b = Board.new
+d = Display.new(b)
+d.render

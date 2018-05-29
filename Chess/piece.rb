@@ -3,4 +3,8 @@ class Piece
     @piece
   end
   
+  def to_s
+   " p "
+  end
+  
 end
